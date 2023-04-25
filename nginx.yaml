@@ -1,15 +1,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  creationTimestamp: null
   labels:
     run: nginx
   name: nginx
 spec:
   containers:
-  - image: shryu-ncr.kr.ncr.ntruss.com/nginx:22
+  - image: shryu-ncr.kr.ncr.ntruss.com/test/nginx:22
     name: nginx
     ports:
     - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
 ---
 apiVersion: v1
 kind: Service
