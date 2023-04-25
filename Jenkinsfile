@@ -15,6 +15,8 @@ node {
   stage('======== Update YAML file ========') {
     sh "git switch yaml"
     sh "git pull"
+    sh "git config --global user.email "shryu@cloit.com"
+    sh "git config --global user.name "shryu"
     sh "sed -i s%test/nginx:.*%test/nginx:${env.BUILD_NUMBER}%g nginx.yaml"
     sh "cat nginx.yaml | grep image:"
     sh "git add nginx.yaml"
