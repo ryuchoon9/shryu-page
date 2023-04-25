@@ -7,7 +7,7 @@ node {
     app = docker.build("test/nginx")
   }
   stage('======== Push image ========') {
-    docker.withRegistry('shryu-ncr.kr.ncr.ntruss.com', 'ncr') {
+    docker.withRegistry('https://shryu-ncr.kr.ncr.ntruss.com', 'ncr') {
        app.push("${env.BUILD_NUMBER}")
        app.push("latest")
     }
