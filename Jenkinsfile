@@ -18,7 +18,7 @@ node {
     sh "sed -i s%test/nginx:.*%test/nginx:${env.BUILD_NUMBER}%g nginx.yaml"
     sh "cat nginx.yaml | grep image:"
     sh "git add nginx.yaml"
-    sh "git commit -m 'image tag update ${env.BUILD_NUMBER}’”
+    sh "git commit -m 'image tag update ${env.BUILD_NUMBER}'"
     sh "git push -u origin yaml"
   }
 }
