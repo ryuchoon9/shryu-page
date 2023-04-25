@@ -12,6 +12,8 @@ spec:
     ports:
     - containerPort: 80
     resources: {}
+  imagePullSecrets:
+  - name: regred
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
