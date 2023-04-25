@@ -3,7 +3,7 @@ node {
     checkout scm
   }
   stage('======== Build image ========') {
-    sh "gir switch docker"
+    sh "git switch docker"
     app = docker.build("test/nginx")
   }
   stage('======== Push image ========') {
