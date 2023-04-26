@@ -13,3 +13,20 @@ spec:
     - containerPort: 80
   imagePullSecrets:
   - name: regred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: nginx
+  name: nginx-svc
+  namespace: default
+spec:
+  ports:
+  - nodePort: 31000
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: nginx
+  type: LoadBalancer
