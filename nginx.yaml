@@ -11,13 +11,8 @@ spec:
     name: nginx
     ports:
     - containerPort: 80
-    resources: {}
   imagePullSecrets:
   - name: regred
-  dnsPolicy: ClusterFirst
-  restartPolicy: Always
-status: {}
-
 ---
 apiVersion: v1
 kind: Service
