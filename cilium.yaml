@@ -1,6 +1,9 @@
 apiVersion: cilium.io/v2	
 kind: CiliumIdentity	
 metadata:	
+  annotations:	
+    kubectl.kubernetes.io/last-applied-configuration: >	
+      {"apiVersion":"cilium.io/v2","kind":"CiliumIdentity","metadata":{"annotations":{},"generation":1,"labels":{"app.kubernetes.io/instance":"nginx","io.cilium.k8s.policy.cluster":"default","io.cilium.k8s.policy.serviceaccount":"default","io.kubernetes.pod.namespace":"default","run":"nginx"},"managedFields":[{"apiVersion":"cilium.io/v2","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:app.kubernetes.io/instance":{},"f:io.cilium.k8s.policy.cluster":{},"f:io.cilium.k8s.policy.serviceaccount":{},"f:io.kubernetes.pod.namespace":{},"f:run":{}}},"f:security-labels":{".":{},"f:k8s:app.kubernetes.io/instance":{},"f:k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name":{},"f:k8s:io.cilium.k8s.policy.cluster":{},"f:k8s:io.cilium.k8s.policy.serviceaccount":{},"f:k8s:io.kubernetes.pod.namespace":{},"f:k8s:run":{}}},"manager":"cilium-agent","operation":"Update","time":"2023-04-26T08:36:07Z"}],"name":"5400","resourceVersion":"496043","uid":"16de9a06-8d57-4622-b78a-c31b0c08e652"},"security-labels":{"k8s:app.kubernetes.io/instance":"nginx","k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name":"default","k8s:io.cilium.k8s.policy.cluster":"default","k8s:io.cilium.k8s.policy.serviceaccount":"default","k8s:io.kubernetes.pod.namespace":"default","k8s:run":"nginx"}}	
   generation: 1	
   labels:	
     app.kubernetes.io/instance: nginx	
@@ -31,8 +34,18 @@ metadata:
       manager: cilium-agent	
       operation: Update	
       time: '2023-04-26T08:36:07Z'	
+    - apiVersion: cilium.io/v2	
+      fieldsType: FieldsV1	
+      fieldsV1:	
+        'f:metadata':	
+          'f:annotations':	
+            .: {}	
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}	
+      manager: argocd-application-controller	
+      operation: Update	
+      time: '2023-04-26T08:36:55Z'	
   name: '5400'	
-  resourceVersion: '496043'	
+  resourceVersion: '496299'	
   uid: 16de9a06-8d57-4622-b78a-c31b0c08e652	
 security-labels:	
   'k8s:app.kubernetes.io/instance': nginx	
