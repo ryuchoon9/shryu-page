@@ -4,6 +4,7 @@ node {
   }
   stage('======== Build image ========') {
     sh "git switch jenkins"
+    sh "git pull"
     app = docker.build("test/nginx")
   }
   stage('======== Push image ========') {
